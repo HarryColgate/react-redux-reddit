@@ -12,9 +12,9 @@ export default function Header() {
             <div className='header-content'>
                 <ul>
                     {/*uses the set filter from feedSlice to change the current filter*/}
-                    <li><a onClick={(e) => dispatch(setFilter("Hot"))}>Hot</a></li>
-                    <li><a onClick={(e) => dispatch(setFilter("Recent"))}>Recent</a></li>
-                    <li><a onClick={(e) => dispatch(setFilter("Top"))}>Top</a></li>
+                    <li><a onClick={(e) => dispatch(setFilter("top"))}>Top</a></li>
+                    <li><a onClick={(e) => dispatch(setFilter("new"))}>New</a></li>
+                    <li><a onClick={(e) => dispatch(setFilter("Hot"))}>Hot</a></li>                   
                 </ul>
             </div>
         </div>

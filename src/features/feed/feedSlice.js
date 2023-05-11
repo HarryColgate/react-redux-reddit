@@ -5,7 +5,7 @@ export const fetchFeed = createAsyncThunk(
     'feed/fetchFeed',
     async (inputs) => {
         const {selectedSubreddit, filter} = inputs;
-        const res = await fetch(`https://www.reddit.com/${selectedSubreddit}/${filter}.json`)
+        const res = await fetch(`https://www.reddit.com/r/${selectedSubreddit}/${filter}.json`)
         const json = await res.json()
         return json.data.children.map(subreddit => subreddit.data)
     }
@@ -14,8 +14,8 @@ export const fetchFeed = createAsyncThunk(
 
 const initialState = {
     feed: [],
-    selectedSubreddit: "Popular",
-    filter: "Hot",
+    selectedSubreddit: "popular",
+    filter: "top",
     isLoading: false,
     error: false,
 }
