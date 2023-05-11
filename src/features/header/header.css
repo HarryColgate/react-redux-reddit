@@ -10,6 +10,11 @@
 .header a {
     text-decoration: none;
     color: #808080;
+    cursor:pointer;
+}
+
+.header a:hover {
+    color: #FF5700;
 }
 
 .header-content ul{

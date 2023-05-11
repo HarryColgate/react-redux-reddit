@@ -35,7 +35,12 @@
 
 .sidenav a {
     text-decoration: none;
-    color: #808088
+    color: #808088;
+    cursor:pointer;
+}
+
+.sidenav a:hover {
+    color: #FF5700;
 }
 
 .sidenav li {

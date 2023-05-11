@@ -1,12 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectSubreddits, selectMenu } from '../subreddits/subredditsSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { 
+    selectSubreddits, 
+    selectMenu,
+} from '../subreddits/subredditsSlice';
+import { setSelectedSubreddit } from '../feed/feedSlice'
 import './sidenav.css';
 
 export default function Sidenav() {
 
     const menu = useSelector(selectMenu);
     const subreddits = useSelector(selectSubreddits);
+    const dispatch = useDispatch();
 
     return(
         <div className="sidenav">
@@ -19,14 +24,16 @@ export default function Sidenav() {
             </div>
             <div className='sidenav-link'>
                 <ul>
+                    {/*uses the setSelectedSubreddit from feedSlice to change the current Subreddit*/}
                     {menu.map(obj => (
-                        <li><a href="">{obj.name}</a></li>
+                        <li><a onClick={(e) => dispatch(setSelectedSubreddit(obj.name))}>{obj.name}</a></li>
                     ))}
                 </ul>
                 <hr />
                 <ul>
+                    {/*uses the setSelectedSubreddit from feedSlice to change the current Subreddit*/}
                     {subreddits.map(obj => (
-                        <li><a href="">{obj.name}</a></li>
+                        <li><a onClick={(e) => dispatch(setSelectedSubreddit(obj.name))}>{obj.name}</a></li>
                     ))}
                 </ul>
             </div>
