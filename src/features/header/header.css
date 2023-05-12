@@ -9,12 +9,20 @@
 
 .header a {
     text-decoration: none;
-    color: #808080;
     cursor:pointer;
 }
 
 .header a:hover {
     color: #FF5700;
+}
+
+.highlight {
+    color: #FF5700;
+    border-bottom: #FF5700 solid 1px;
+}
+
+.noHighlight {
+    color: #808080;
 }
 
 .header-content ul{

@@ -15,7 +15,7 @@ export const fetchFeed = createAsyncThunk(
 const initialState = {
     feed: [],
     selectedSubreddit: "popular",
-    filter: "top",
+    filter: "hot",
     isLoading: false,
     error: false,
 }
@@ -49,6 +49,4 @@ const feedSlice =  createSlice({
 })
 
 export const { setSelectedSubreddit, setFilter } = feedSlice.actions;
-export const selectFeed = state => state.feed.feed;
-export const selectSelectedSubreddit = state => state.feed.selectedSubreddit;
 export default feedSlice.reducer;

@@ -4,20 +4,19 @@ const initialState = {
   currentSub: "Popular",
   sortBy: "Hot",
   menulist: [
-    {name: "Popular"},
-    {name: "All"},
-    {name: "Random"}
+    {name: "popular"},
+    {name: "all"},
   ],
   subredditlist: [
     {name: "eyebleach"},
-    {name: "prefectloops"},
+    {name: "perfectloops"},
     {name: "blessedimages"},
     {name: "worldnews"},
     {name: "casualuk"},
     {name: "explainlikeimfive"},
     {name: "gifs"},
     {name: "ama"},
-    {name: "askreddit"},
+    {name: "shittyfoodporn"},
     {name: "askreddit"},
   ]
 };
@@ -39,8 +38,6 @@ export const { changeCurrentSub, changeSortBy } = subredditsSlice.actions;
 
 export const selectMenu = (state) => state.subreddits.menulist;
 export const selectSubreddits = (state) => state.subreddits.subredditlist;
-export const getSub = (state) => state.subreddits.currentSub;
-export const getSort = (state) => state.subreddits.sortBy;
 
 
 //REMEMBER TO DO THIS TO USE YOUR SLICE DUMMY!!!!

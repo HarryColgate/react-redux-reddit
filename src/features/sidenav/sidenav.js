@@ -4,7 +4,7 @@ import {
     selectSubreddits, 
     selectMenu,
 } from '../subreddits/subredditsSlice';
-import { setSelectedSubreddit } from '../feed/feedSlice'
+import { setSelectedSubreddit, setFilter } from '../feed/feedSlice'
 import './sidenav.css';
 
 export default function Sidenav() {
@@ -12,6 +12,10 @@ export default function Sidenav() {
     const menu = useSelector(selectMenu);
     const subreddits = useSelector(selectSubreddits);
     const dispatch = useDispatch();
+    const handleClick = (subName) => {
+        dispatch(setSelectedSubreddit(subName))
+        dispatch(setFilter("hot"))
+    }
 
     return(
         <div className="sidenav">
@@ -26,14 +30,14 @@ export default function Sidenav() {
                 <ul>
                     {/*uses the setSelectedSubreddit from feedSlice to change the current Subreddit*/}
                     {menu.map(obj => (
-                        <li><a onClick={(e) => dispatch(setSelectedSubreddit(obj.name))}>{obj.name}</a></li>
+                        <li><a onClick={() => handleClick(obj.name)}>{obj.name}</a></li>
                     ))}
                 </ul>
                 <hr />
                 <ul>
                     {/*uses the setSelectedSubreddit from feedSlice to change the current Subreddit*/}
                     {subreddits.map(obj => (
-                        <li><a onClick={(e) => dispatch(setSelectedSubreddit(obj.name))}>{obj.name}</a></li>
+                        <li><a onClick={() => handleClick(obj.name)}>{obj.name}</a></li>
                     ))}
                 </ul>
             </div>
